@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatuma Handmade or Craftworks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: rgb(83, 31, 31);
+            text-decoration: none;
+        }
+
+        #search-bar {
+            margin-left: 20px;
+            padding: 5px;
+        }
+
+        .background {
+            background: url('c:\Users\user\Pictures\Camera Roll\WhatsApp Image 2024-07-12 at 01.13.36_2a2fc051.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .login-form {
+            background: rgba(117, 94, 94, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .login-form input {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 80%;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .login-form button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #e67e22;
+            color: white;
+            cursor: pointer;
+        }
+
+        section {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .product {
+            margin: 20px 0;
+            display: inline-block;
+            text-align: left;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            margin: 10px;
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .add-to-cart {
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fatuma Handmade or Craftworks</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <input type="text" id="search-bar" placeholder="Search...">
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="background">
+            <div class="login-form">
+                <h2>Login</h2>
+                <form action="#">
+                    <input type="text" placeholder="Username">
+                    <input type="password" placeholder="Password">
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to Fatuma Handmade or Craftworks! We offer a variety of handmade crafts that bring joy and beauty to your home.</p>
+    </section>
+
+    <section id="shop">
+        <h2>Our Products</h2>
+        <div class="product">
+            <img src="images/necklace.jpg" alt="Handmade Necklace">
+            <h3>Handmade Necklace</h3>
+            <p>A beautiful, handcrafted necklace made with love.</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/pottery.jpg" alt="Decorative Pottery">
+            <h3>Decorative Pottery</h3>
+            <p>Unique pottery pieces to decorate your home.</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <!-- Add more products as needed -->
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@fatuma-craftworks.com</p>
+        <p>Phone: (123) 456-7890</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Fatuma Handmade or Craftworks</p>
+    </footer>
+
+    <script>
+        // Placeholder for add-to-cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Item added to cart!');
+            });
+        });
+    </script>
+</body>
+</html>

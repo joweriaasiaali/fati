@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Banking Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2C3E50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .atm {
+            background: #ECF0F1;
+            border-radius: 10px;
+            padding: 20px;
+            width: 350px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+        }
+        .atm h1 {
+            color: #23578b;
+            text-align: center;
+        }
+        .atm h2 {
+            color: #eeca2b;
+            font-size: 18px;
+        }
+        .atm form {
+            display: flex;
+            flex-direction: column;
+        }
+        .atm label {
+            color: #34495E;
+            margin-bottom: 5px;
+        }
+        .atm input, .atm select, .atm button {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #34495E;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .atm button {
+            background-color: #3498DB;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .atm button:hover {
+            background-color: #2980B9;
+        }
+        .atm .balance {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="atm">
+        <h1>ATM Banking</h1>
+        <div class="balance">
+            <h2>Balance: <span id="balance">0</span> USD</h2>
+        </div>
+        <form id="transaction-form">
+            <label for="action">Select Action:</label>
+            <select id="action" name="action">
+                <option value="deposit">Deposit</option>
+                <option value="withdraw">Withdraw</option>
+                <option value="cheque">Cheque</option>
+                <option value="loan">Loan</option>
+            </select>
+
+            <label for="amount">Enter Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+
+            <button type="button" onclick="performTransaction()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        let balance = 0;
+
+        function performTransaction() {
+            const action = document.getElementById('action').value;
+            const amount = parseFloat(document.getElementById('amount').value);
+            const balanceDisplay = document.getElementById('balance');
+
+            if (isNaN(amount) || amount <= 0) {
+                alert('Please enter a valid amount');
+                return;
+            }
+
+            if (action === 'deposit') {
+                balance += amount;
+                alert('Deposited ' + amount + ' USD');
+            } else if (action === 'withdraw') {
+                if (amount > balance) {
+                    alert('Insufficient balance');
+                } else {
+                    balance -= amount;
+                    alert('Withdrew ' + amount + ' USD');
+                }
+            } else if (action === 'cheque') {
+                alert('Cheque of ' + amount + ' USD processed');
+            } else if (action === 'loan') {
+                balance += amount;
+                alert('Loan of ' + amount + ' USD granted');
+            }
+
+            balanceDisplay.textContent = balance.toFixed(2);
+        }
+    </script>
+</body>
+</html>
